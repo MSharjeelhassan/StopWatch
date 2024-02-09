@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main">
         <div>
-            <h1><span id="hoursDisp">00</span>:<span id="minsDisp">00</span>:<span id="secondsDisp">00</span>:<span id="millisecondsDisp">00</span>
+            <h1><span id="hoursDisp">00</span>:<span id="minsDisp">00</span>:<span id="secondsDisp">00</span>:<span
+                    id="millisecondsDisp">00</span>
             </h1>
             <div class="btnParent">
-<button>Start</button>
-<button>Stop</button>
-<button>Reset</button>
+                <button onclick="startTimer()">Start</button>
+                <button onclick="stopTimer()">Stop</button>
+                <button onclick="resetTimer()">Reset</button>
             </div>
-        </div>
         </div>
     </div>
 
+
     <script src="script.js"></script>
 </body>
+
 </html>
