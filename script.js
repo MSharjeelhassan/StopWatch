@@ -1,5 +1,4 @@
-alert("abcd     ")
-
+// alert("abcd     ")
 var hours = 0;
 var mins = 0;
 var seconds = 0;
@@ -9,13 +8,16 @@ var hoursDisp = document.getElementById("hoursDisp");
 var minsDisp = document.getElementById("minsDisp");
 var secondsDisp = document.getElementById('secondsDisp');
 var millisecondsDisp =document.getElementById('millisecondsDisp');
+var startBtn = document.getElementById('startBtn');
+var stopBtn = document.getElementById('stopBtn');
+var resetBtn = document.getElementById('resetBtn');
 
 // console.log(hoursDisp);
 
 function renderTimer(){
     hoursDisp.innerHTML = hours;
-    console.log(hoursDisp)
-    console.log(hoursDisp.innerHTML)
+    // console.log(hoursDisp)
+    // console.log(hoursDisp.innerHTML)
     minsDisp.innerHTML = mins;
     secondsDisp.innerHTML=seconds;
     millisecondsDisp.innerHTML = milliseconds;
@@ -25,12 +27,15 @@ var interval;
 function startTimer(){
     interval = setInterval(function(){
         milliseconds++;
+        console.log(milliseconds);
         if(milliseconds==10){
+            console.log("ab chali na tm")
             milliseconds = 0;
             seconds++;
             if(seconds==60){
                 seconds=0;
                 mins++;
+                console.log("IIIIIII")
                 if(mins==60){
                     mins=0;
                     hours++;
@@ -39,11 +44,15 @@ function startTimer(){
     
         }
         renderTimer();
+        console.log("main agaya but min hour abhi nai aya")
     },100);
-
+startBtn.disabled = true;
 }
 function stopTimer(){
     clearInterval(interval);
+    startBtn.disabled = false;//sir na bola tha ka start maqin disable nai hoga phr star honey ka bad hojaega
+    stopBtn.disabled = true;//start main stop jo hy wo disable hoga
+
 }
 function resetTimer(){
     stopTimer();
@@ -52,6 +61,9 @@ function resetTimer(){
     seconds=0;
     milliseconds=0;
     renderTimer();
+    startBtn.disabled =false;
+    stopBtn.disabled = true;
+    resetBtn.disabled = true;
 }
 
 
